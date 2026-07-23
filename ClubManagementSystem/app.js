@@ -4,6 +4,7 @@ const homeRoutes = require("./routes/homeRoutes");
 const { sequelize } = require("./models");
 const authRoutes = require("./routes/authRoutes");
 const session = require("express-session");
+const clubRoutes = require("./routes/clubRoutes");
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", homeRoutes);
 app.use("/", authRoutes);
+app.use("/", clubRoutes);
 
 
 // Server

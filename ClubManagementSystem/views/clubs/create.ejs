@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Create Club</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container mt-5">
+
+    <h2>Create Club</h2>
+
+    <form action="/clubs/create" method="POST">
+
+        <input
+            class="form-control mb-3"
+            name="name"
+            placeholder="Club Name"
+            required>
+
+        <textarea
+            class="form-control mb-3"
+            name="description"
+            placeholder="Description"></textarea>
+
+        <button class="btn btn-success">
+            Create
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>
