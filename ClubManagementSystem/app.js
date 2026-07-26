@@ -11,6 +11,7 @@ const applicationRoutes = require("./routes/applicationRoutes");
 
 
 
+
 const app = express();
 
 // View Engine
@@ -34,6 +35,7 @@ app.use("/", authRoutes);
 app.use("/", clubRoutes);
 app.use("/", eventRoutes);
 app.use("/", applicationRoutes);
+app.use(express.static(path.join(__dirname, "public")));
 
 
 // Server
