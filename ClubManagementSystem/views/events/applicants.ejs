@@ -19,18 +19,14 @@
 
     </h2>
 
-    <a href="/events" class="btn btn-secondary mb-3">
-
-        ← Back to Events
-
+    <a href="/events" class="btn btn-dark mb-3">
+         Back to Events
     </a>
 
     <% if(event.Applications.length === 0){ %>
 
         <div class="alert alert-info">
-
             No applications for this event yet.
-
         </div>
 
     <% } else { %>
@@ -75,25 +71,19 @@
                             <% if(application.status === "Approved"){ %>
 
                                 <span class="badge bg-success">
-
                                     Approved
-
                                 </span>
 
                             <% } else if(application.status === "Rejected"){ %>
 
                                 <span class="badge bg-danger">
-
                                     Rejected
-
                                 </span>
 
                             <% } else { %>
 
                                 <span class="badge bg-warning text-dark">
-
                                     Pending
-
                                 </span>
 
                             <% } %>
