@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Applications</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <%- include("../partials/navbar") %>
+    <div class="container mt-5">
+        <h2>Applications</h2>
+        <table class="table table-bordered">
+
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Event</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <% applications.forEach(application=> { %>
+
+                    <tr>
+                        <td>
+                            <%= application.User.firstName %>
+                                <%= application.User.lastName %>
+                        </td>
+
+                        <td>
+                            <%= application.Event.title %>
+                        </td>
+
+                        <td>
+                            <% if(application.status==="Approved" ){ %>
+
+                                <span class="badge bg-success">
+                                    Approved
+                                </span>
+
+                                <% } else if(application.status==="Rejected" ){ %>
+
+                                    <span class="badge bg-danger">
+                                        Rejected
+                                    </span>
+
+                                    <% } else { %>
+
+                                        <span class="badge bg-warning text-dark">
+                                            Pending
+                                        </span>
+
+                                         <% } %>
+                        </td>
+
+                        <td>
+                            <form action="/applications/approve/<%= application.id %>" method="POST"
+                                style="display:inline;">
+                                <button class="btn btn-success btn-sm">
+                                    Approve
+                                </button>
+                            </form>
+
+                            <form action="/applications/reject/<%= application.id %>" method="POST"
+                                style="display:inline;">
+
+                                <button class="btn btn-danger btn-sm">
+                                    Reject
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

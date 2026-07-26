@@ -1,10 +1,15 @@
 const express = require("express");
+const router = express.Router();
 const path = require("path");
 const homeRoutes = require("./routes/homeRoutes");
 const { sequelize } = require("./models");
 const authRoutes = require("./routes/authRoutes");
 const session = require("express-session");
 const clubRoutes = require("./routes/clubRoutes");
+const eventRoutes = require("./routes/eventRoutes");
+const applicationRoutes = require("./routes/applicationRoutes");
+
+
 
 const app = express();
 
@@ -27,6 +32,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", homeRoutes);
 app.use("/", authRoutes);
 app.use("/", clubRoutes);
+app.use("/", eventRoutes);
+app.use("/", applicationRoutes);
 
 
 // Server
@@ -43,3 +50,11 @@ sequelize.sync()
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+app.use((req, res) => {
+
+    res.status(404).render("404");
+
+});
+
+module.exports = router;

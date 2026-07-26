@@ -1,33 +1,57 @@
-<form action="/register" method="POST">
+<!DOCTYPE html>
+<html>
 
-    <input
-        class="form-control mb-3"
-        name="firstName"
-        placeholder="First Name"
-        required>
+<head>
 
-    <input
-        class="form-control mb-3"
-        name="lastName"
-        placeholder="Last Name"
-        required>
+    <title>Register</title>
 
-    <input
-        class="form-control mb-3"
-        type="email"
-        name="email"
-        placeholder="Email"
-        required>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <input
-        class="form-control mb-3"
-        type="password"
-        name="password"
-        placeholder="Password"
-        required>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/favicon" href="/favicon.ico">
 
-    <button class="btn btn-success">
-        Register
-    </button>
+</head>
 
-</form>
+<body>
+
+    <div class="container">
+        <<div class="row justify-content-center align-items-center vh-100">
+            <div class="col-md-5">
+                <div class="card shadow rounded-4 border-dark">
+                    <div class="card-body p-4">
+
+                        <h2 class="text-center mb-4">NextEvent</h2>
+
+                        <p class="text-center text-muted mb-4">Create your account</p>
+
+                        <form action="/register" method="POST">
+
+                            <input class="form-control mb-3" name="firstName" placeholder="First Name" required>
+
+                            <input class="form-control mb-3" name="lastName" placeholder="Last Name" required>
+
+                            <input class="form-control mb-3" type="email" name="email" placeholder="Email" required>
+
+                            <input class="form-control mb-3" type="password" name="password" placeholder="Password"
+                                required>
+
+                            <button class="btn btn-dark w-100">Register</button>
+
+                        </form>
+
+                        <div class="text-center mt-3">
+                            Already have an account?
+
+                            <a href="/login">
+                                Login
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

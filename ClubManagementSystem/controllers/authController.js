@@ -60,6 +60,7 @@ exports.login = async (req, res) => {
         req.session.email = user.email;
         req.session.firstName = user.firstName;
         req.session.lastName = user.lastName;
+        req.session.role = user.role;
 
         res.redirect("/dashboard");
 
@@ -73,4 +74,13 @@ exports.logout = (req, res) => {
     req.session.destroy(() => {
         res.redirect("/login");
     });
+};
+
+exports.isAdmin = (req, res, next) => {
+
+    if (req.session.role !== "admin") {
+        return res.status(403).send("Access denied.");
+    }
+
+    next();
 };

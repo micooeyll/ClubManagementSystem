@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Edit Event</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/favicon" href="/favicon.ico">
+</head>
+
+<body>
+<%- include("../partials/navbar") %>
+    <div class="container mt-5">
+
+        <h2>Edit Event</h2>
+
+        <form action="/events/edit/<%= event.id %>" method="POST">
+
+            <input
+                class="form-control mb-3"
+                name="title"
+                value="<%= event.title %>"
+                required>
+
+            <textarea
+                class="form-control mb-3"
+                name="description"
+                required><%= event.description %></textarea>
+
+            <input
+                class="form-control mb-3"
+                name="location"
+                value="<%= event.location %>"
+                required>
+
+            <input
+                class="form-control mb-3"
+                type="datetime-local"
+                name="eventDate"
+                value="<%= event.eventDate ? new Date(event.eventDate).toISOString().slice(0,16) : '' %>"
+                required>
+
+            <input
+                class="form-control mb-3"
+                type="number"
+                name="quota"
+                value="<%= event.quota %>"
+                required>
+
+            <select class="form-select mb-3" name="clubId">
+
+                <% clubs.forEach(club => { %>
+
+                    <option
+                        value="<%= club.id %>"
+                        <%= club.id === event.clubId ? "selected" : "" %>>
+
+                        <%= club.name %>
+
+                    </option>
+
+                <% }) %>
+
+            </select>
+
+            <button class="btn btn-success">
+
+                Update Event
+
+            </button>
+
+            <a href="/events" class="btn btn-secondary">
+
+                Cancel
+
+            </a>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,28 +1,167 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Dashboard</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/favicon" href="/favicon.ico">
 </head>
 
 <body>
 
-<div class="container mt-5">
+    <%- include("partials/navbar") %>
 
-    <h1>🎉 Dashboard</h1>
+        <div class="container mt-5">
 
-    <h3>Welcome <%= firstName %> <%= lastName %></h3>
+            <div class="mb-4">
 
-    <hr>
+                <h1 class="fw-bold">
+                    Dashboard 
+                </h1>
 
-    <a href="/events" class="btn btn-primary">Events</a>
+                <h4>
 
-    <a href="/clubs" class="btn btn-success">Clubs</a>
+                    Welcome,
 
-    <a href="/logout" class="btn btn-danger">Logout</a>
+                    <span class="text-primary">
+                        <%= firstName %>
+                            <%= lastName %>
+                    </span>
 
-</div>
+                </h4>
+
+                <p class="text-muted">
+
+                    Logged in as
+                    <span class="text-dark fw-bold">
+                        <%= role %>
+                    </span>
+
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="card border-dark shadow-sm h-100">
+
+                        <div class="card-body text-center fw bold">
+
+                            <h1>🏫</h1>
+
+                            <h5 class="mt-2">
+                                Clubs
+                            </h5>
+
+                            <h2 class="text-dark">
+                                <%= clubCount %>
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="card border-dark shadow-sm h-100">
+
+                        <div class="card-body text-center fw bold">
+
+                            <h1>📢</h1>
+
+                            <h5 class="mt-2">
+                                Events
+                            </h5>
+
+                            <h2 class="text-dark">
+                                <%= eventCount %>
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="card border-dark shadow-sm h-100">
+
+                        <div class="card-body text-center">
+
+                            <h1>👤</h1>
+
+                            <h5 class="mt-2">
+                                Users
+                            </h5>
+
+                            <h2 class="text-dark">
+
+                                <%= userCount %>
+
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="card border-dark shadow-sm h-100">
+
+                        <div class="card-body text-center">
+
+                            <h1>📩</h1>
+
+                            <h5 class="mt-2">
+                                Applications
+                            </h5>
+
+                            <h2 class="text-dark">
+                                <%= applicationCount %>
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr class="my-5">
+
+            <div class="d-flex flex-wrap gap-3">
+
+                <a href="/events" class="btn btn-dark btn-lg">Events</a>
+
+                <a href="/clubs" class="btn btn-dark btn-lg">Clubs</a>
+
+                <% if(role==="admin" ){ %>
+
+                    <a href="/applications" class="btn btn-dark btn-lg">Manage Applications</a>
+
+                    <% } else { %>
+
+                        <a href="/applications/my"  class="btn btn-dark btn-lg text-white">My Applications</a>
+
+                        <% } %>
+
+            </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>Create Club</title>
+    <title>Edit Club</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" type="image/favicon" href="/favicon.ico">
@@ -13,23 +13,22 @@
 <%- include("../partials/navbar") %>
 <div class="container mt-5">
 
-    <h2>Create Club</h2>
+    <h2>Edit Club</h2>
 
-    <form action="/clubs/create" method="POST">
+    <form action="/clubs/edit/<%= club.id %>" method="POST">
 
         <input
             class="form-control mb-3"
             name="name"
-            placeholder="Club Name"
+            value="<%= club.name %>"
             required>
 
         <textarea
             class="form-control mb-3"
-            name="description"
-            placeholder="Description"></textarea>
+            name="description"><%= club.description %></textarea>
 
-        <button class="btn btn-success">
-            Create
+        <button class="btn btn-dark">
+            Update
         </button>
 
     </form>

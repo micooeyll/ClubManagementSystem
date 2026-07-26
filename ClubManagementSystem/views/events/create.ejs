@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Create Event</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/favicon" href="/favicon.ico">
+</head>
+
+<body>
+<%- include("../partials/navbar") %>
+    <div class="container mt-5">
+
+        <h2>Create Event</h2>
+
+        <form action="/events/create" method="POST">
+
+            <input class="form-control mb-3" name="title" placeholder="Title" required>
+
+            <textarea class="form-control mb-3" name="description" placeholder="Description"></textarea>
+
+            <input class="form-control mb-3" name="location" placeholder="Location" required>
+
+            <input class="form-control mb-3" type="datetime-local" name="eventDate" required>
+
+            <input class="form-control mb-3" type="number" name="quota" placeholder="Quota" required>
+
+            <select class="form-select mb-3" name="clubId">
+
+                <% clubs.forEach(club=>{ %>
+
+                    <option value="<%= club.id %>">
+
+                        <%= club.name %>
+
+                    </option>
+
+                    <% }) %>
+
+            </select>
+
+            <button class="btn btn-success">
+
+                Create Event
+
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

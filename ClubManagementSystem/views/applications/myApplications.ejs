@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>My Applications</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+<%- include("../partials/navbar") %>
+    <div class="container mt-5">
+        <h2>My Applications</h2>
+        <table class="table table-bordered">
+
+            <thead>
+
+                <tr>
+                    <th>Event</th>
+                    <th>Status</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+                <% applications.forEach(application=> { %>
+                    <tr>
+                        <td>
+                            <%= application.Event.title %>
+                        </td>
+
+                        <td>
+                            <% if(application.status==="Approved" ){ %>
+
+                                <span class="badge bg-success">
+                                    Approved
+                                </span>
+
+                                <% } else if(application.status==="Rejected" ){ %>
+
+                                    <span class="badge bg-danger">
+                                        Rejected
+                                    </span>
+
+                                    <% } else { %>
+
+                                        <span class="badge bg-warning text-dark">
+                                            Pending
+                                        </span>
+
+                                         <% } %>
+                        </td>
+                    </tr>
+
+                    <% }) %>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</body>
+
+</html>
