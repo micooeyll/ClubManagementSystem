@@ -45,28 +45,14 @@ ClubManagementSystem
 └── package.json
 ```
 
-## Installation
+## To TRY
+....
 
-```bash
-git clone https://github.com/yourusername/NextEvent.git
 
-cd NextEvent
+## Author
 
-npm install
+**Hamide Eylul Micoogullari**
 
-npm start
-```
+Software Engineering Student
 
-The application will run at:
-
-```
-http://localhost:3000
-```
-
-## Screenshots
-
-Add screenshots of the Dashboard, Events, Clubs, and Application pages here.
-
-## License
-
-This project was developed for educational purposes.
+Eastern Mediterranean University
