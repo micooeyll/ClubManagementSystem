@@ -46,7 +46,23 @@ ClubManagementSystem
 ```
 
 ## Screenshots
-....
+
+AdminApplications.jpeg
+AdminClubList.jpeg
+AdminCreateClub.jpeg
+AdminCreateEvent.jpeg
+AdminDashboard.jpeg
+AdminEditEvent.jpeg
+AdminEvent.jpeg
+AdminSeeApplicants.jpeg
+AldreadyApplied.jpeg
+QuotaIsFull.jpeg
+Register.jpeg
+SearchInEvents.jpeg
+SignIn.jpeg
+UserDashboard.jpeg
+UserEvents.jpeg
+UserMyApplications.jpeg
 
 
 ## Author
