@@ -45,7 +45,7 @@ ClubManagementSystem
 └── package.json
 ```
 
-## To TRY
+## Screenshots
 ....
 
 
